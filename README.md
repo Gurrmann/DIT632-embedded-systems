@@ -1,7 +1,7 @@
 # DIT632-embedded-systems
 
 
-<details open>
+<details>
 <summary>Work Package 1 exercises</summary>
 <br>
 Exerc_1_ 1 : (Filename   exerc_1_1.c)
