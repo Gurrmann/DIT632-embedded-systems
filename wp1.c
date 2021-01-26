@@ -20,25 +20,32 @@ int main(void)
     //read input 1 to 5
     scanf("%d", &choice);  
     
-    switch(choice) {
-        case 1 :
-            printf("\n%s\n\n", firstString);
-            break;
-        case 2 :
-            printf("\n%s\n\n", secondString);
-            break;
-        case 3 :
-            printf("\n%s\n\n", thirdString);
-            break;
-        case 4 :
-            printf("\n%s\n\n", fourthString);
-            break;
-        case 5 :
-            printf("\n%s\n\n", fifthString);
-            break;
-        default:
-            break;
+    while (choice >= 1 && choice <= 5)
+        {
+            switch(choice) {
+            case 1 :
+                printf("\n%s\n\n", firstString);
+                break;
+            case 2 :
+                printf("\n%s\n\n", secondString);
+                break;
+            case 3 :
+                printf("\n%s\n\n", thirdString);
+                break;
+            case 4 :
+                printf("\n%s\n\n", fourthString);
+                break;
+            case 5 :
+                printf("\n%s\n\n", fifthString);
+                break;
+            default:
+                break;
+        }
+        scanf("%d", &choice);
     }
+    
+    
+    
     //add input validations so the program does not crash
     return 0;
 }
