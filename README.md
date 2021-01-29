@@ -42,7 +42,7 @@ You should develop a very simple game in which the computer creates a random int
 if a user by accident put in any character other than a number.
 </details>
 
-<details>
+<details open>
 <summary>Work Package 2 exercises</summary>
 <br><br>
 Exerc_2_ 1 : (Filename exerc_2_1.c) 
@@ -132,15 +132,15 @@ Given an array table[]={ 1,2,12, 5,1,0,0,5,9,12, 0,2,3,0} the program will print
 9 x <br>
 12 xx <br>
 <br>
+
 Note: Numbers with frequency 0 in the array frequency[] is not printed out.
 ```c
 #include <stdio.h>
 #include <time.h>
-
 #define MAX 100
 #define MAXNUMBER 20
 
-// ------ Function declaration ----------
+//  Function declaration 
 void create_random( int *tab );             // Use pointer to fill the table
 void count_frequency(int *tab, int *freq ); // Use pointer
 void draw_histogram(int *freq );            // Use pointer
