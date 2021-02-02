@@ -73,3 +73,30 @@ char switchLetter(char c, char lowerCaseArr[], char upperCaseArr[]) {
         }
     }
 }
+
+//Aleksandar fix to the upper case problem.
+        // if (!isupper(c))
+        // {
+        //     if (c == arr[i] && i <= 12)
+        //     { //if the letter found is in possition 0-12 returns char in position i+13
+        //         printf("DEBUG: char is 12 or smaller \n");
+        //         return arr[i + 13];
+        //     }
+        //     else if (c == arr[i] && i > 12)
+        //     { //if the letter found is in possition 13-25 returns char in position i-13
+        //         printf("DEBUG: char is 13 or greater \n");
+        //         return arr[i - 13];
+        //     }
+        // }
+        // else
+        // {
+        //     if (c == arr[i] - 32 && i <= 12)
+        //     { //if the letter found is in possition 0-12 returns char in position i+13
+        //         printf("DEBUG: char is 12 or smaller \n");
+        //         return arr[i + 13] - 32;
+        //     }
+        //     else if (c == arr[i] - 32 && i > 12)
+        //     { //if the letter found is in possition 13-25 returns char in position i-13
+        //         printf("DEBUG: char is 13 or greater \n");
+        //         return arr[i - 13] - 32;
+        //     }        
