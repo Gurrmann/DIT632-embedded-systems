@@ -45,12 +45,31 @@ int main(int argc, char const *argv[])
 char switchLetter(char c, char arr[]) {
     //for loop 0-25 size of array "alphabet"
     for (int i = 0; i < 26; i++) {
-        if (c == arr[i] && i <= 12) { //if the letter found is in possition 0-12 returns char in position i+13
-            printf("DEBUG: char is 12 or smaller \n");
-            return arr[i+13];
-        } else if (c == arr[i] && i > 12) { //if the letter found is in possition 13-25 returns char in position i-13
-            printf("DEBUG: char is 13 or greater \n");
-            return arr[i-13];
+        if (!isupper(c))
+        {
+            if (c == arr[i] && i <= 12)
+            { //if the letter found is in possition 0-12 returns char in position i+13
+                printf("DEBUG: char is 12 or smaller \n");
+                return arr[i + 13];
+            }
+            else if (c == arr[i] && i > 12)
+            { //if the letter found is in possition 13-25 returns char in position i-13
+                printf("DEBUG: char is 13 or greater \n");
+                return arr[i - 13];
+            }
+        }
+        else
+        {
+            if (c == arr[i] - 32 && i <= 12)
+            { //if the letter found is in possition 0-12 returns char in position i+13
+                printf("DEBUG: char is 12 or smaller \n");
+                return arr[i + 13] - 32;
+            }
+            else if (c == arr[i] - 32 && i > 12)
+            { //if the letter found is in possition 13-25 returns char in position i-13
+                printf("DEBUG: char is 13 or greater \n");
+                return arr[i - 13] - 32;
+            }        
         }
     }
 }
