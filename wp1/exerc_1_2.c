@@ -1,3 +1,15 @@
+/*====================================
+File name: exerc_1_2.c
+Date: 2020-02-02
+Group nr: 21
+Members that contributed to the solutions:
+Aleksandar Isakovski
+Gustav Skallberg
+Thiago Oliva
+
+Demonstration code: 495357
+======================================*/
+
 #include<stdio.h>
 
 #define MAX 80 // This value will decide how many characters that the user is allowed to input

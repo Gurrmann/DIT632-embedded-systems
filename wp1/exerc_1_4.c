@@ -1,3 +1,14 @@
+/*====================================
+File name: exerc_1_4.c
+Date: 2020-02-02
+Group nr: 21
+Members that contributed to the solutions:
+Aleksandar Isakovski
+Gustav Skallberg
+
+Demonstration code: 495357
+======================================*/
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -8,12 +19,13 @@ int main(int argc, char const *argv[])
 
     //printf("%d", randomN , "\n");
 
+    int guessCount = 0; //outside the loop, so it is not reinitialize every iteration
+    
     //infinite while loop
     while(1){
 
         //variable declaration
-        int number;
-        int guessCount = 0;
+        int number = 0;
 
         printf("enter a number in the range of 1-100: \n"); //print instructions to user
         scanf("%d", &number);                               // get user input

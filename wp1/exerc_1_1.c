@@ -1,13 +1,22 @@
+/*====================================
+File name: exerc_1_1.c
+Date: 2020-02-02
+Group nr: 21
+Members that contributed to the solutions:
+Aleksandar Isakovski
+Gustav Skallberg
+Thiago Oliva
+
+Demonstration code: 495357
+======================================*/
+
 #include <stdio.h>
 #include <stdbool.h>
 
-
 int main() {
 
-    
    bool exit = false; // Program will run forever while this value is equal to false
 
-        
         //Infinite loop until the user puts in a 0
         while (!exit) {
 
