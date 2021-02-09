@@ -45,8 +45,3 @@ void copyString(char *userInput, char *copy) {
                     //to the end of the char array at the current index 
                     //which *copy is pointing to
 }
-
-
-
-
-
