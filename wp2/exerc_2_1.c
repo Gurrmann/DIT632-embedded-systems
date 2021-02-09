@@ -4,6 +4,7 @@
 #include <stddef.h> // so that we can assign NULL to pointer values
 
 #define MAX 20 //max number of chars in input
+#define SIZE 2048 //max str size read from file
 
 void copyString(char *userInput2, char *copyStr2); //function prototype
 
@@ -11,12 +12,20 @@ int main() {
     char userInput[MAX]; //local string variable with user input
     char anotherStr[MAX];
 
-    printf("Please enter string to be copied:\n");
-    fgets(userInput, MAX, stdin); //read user input, saves it in userInput local var
+    printf("\nCopying from myfile.txt");
+    FILE *f; //pointer that will point to an element of type FILE
+    f = fopen("myfile.txt", "r"); //f contains the file content;
+        
+    fgets (userInput, MAX, f);  //reads f, stores content in read_str
+                                // reads just one line
+    fclose(f); //closes input stream
+
+    // printf("Please enter string to be copied:\n");
+    // fgets(userInput, MAX, stdin); //read user input, saves it in userInput local var
     
     // a) copying variable with lib function strcpy()
     strcpy(anotherStr, userInput); //copies userInput to anotherStr
-    printf("The first copied string is:\n %s", anotherStr);
+    printf("\nThe first copied string is:\n %s", anotherStr);
 
     //b) Your own function void copyString(...) not using any library function.
     printf("Please enter second string to be copied:\n");
