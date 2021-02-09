@@ -31,7 +31,7 @@ int main(int argc, char const *argv[])
     printf("Copied string with copyString is: %s \n", copiedString);
     
     strcpy(copiedString2, input);
-    printf("Copied string with strcpy is: %s \n", copiedString);
+    printf("Copied string with strcpy is: %s \n", copiedString2);
 
     return 0;
 }
