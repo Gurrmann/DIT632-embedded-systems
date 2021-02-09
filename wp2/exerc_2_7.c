@@ -33,14 +33,14 @@ int main()
 
     int year = breakDown(persnr, 0, 1);
     printf("\nyear: %d", year);
-    int month = breakDown(persnr, 2, 3);
-    printf("\nmonth: %d", month);
-    int day = breakDown(persnr, 4, 5);
-    printf("\nday: %d", day);
-    int number = breakDown(persnr, 6, 8);
-    printf("\n3 digits: %d", number);
-    int lastDigit = breakDown(persnr, 9, 9);
-    printf("\nlastDigit: %d", lastDigit);
+    // int month = breakDown(persnr, 2, 3);
+    // printf("\nmonth: %d", month);
+    // int day = breakDown(persnr, 4, 5);
+    // printf("\nday: %d", day);
+    // int number = breakDown(persnr, 6, 8);
+    // printf("\n3 digits: %d", number);
+    // int lastDigit = breakDown(persnr, 9, 9);
+    // printf("\nlastDigit: %d", lastDigit);
 
     
   // if (month > 12 || month < 1) {
@@ -61,4 +61,23 @@ void readPersnr(char *person) {
       *person = userInput[i];
       *person++;
     }
+}
+
+//get a range from the char array persnr and return it as an int
+int breakDown(char *persnr, int start, int end) {
+    for (int i = 0; i < start; i++){ //sets pointer to desired start index
+      *persnr++;
+    }
+    
+    char tempArray[MAX]; //creates temp array
+    for (int i = 0; i <= start - end + 1; i++) { //iterates through range
+        tempArray[i] = *persnr; //extracts char
+        *persnr++;
+    }
+    printf("temp array is: %s\n", tempArray);
+    int result;
+    result = atoi(tempArray);
+    printf("result is: %d\n", result);
+
+    return result; //concatenates tempArray and return it as an int
 }

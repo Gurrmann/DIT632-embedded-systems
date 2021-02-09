@@ -22,12 +22,16 @@ int main(int argc, char const *argv[])
 {
     char input[MAX_LENGHT];
     char copiedString[MAX_LENGHT];
+    char copiedString2[MAX_LENGHT];
 
     fgets(input, MAX_LENGHT, stdin);
     printf("Entered String is: %s \n", input);
 
     copyString(input, copiedString);
-    printf("The coppied string is: %s \n", copiedString);
+    printf("Copied string with copyString is: %s \n", copiedString);
+    
+    strcpy(copiedString2, input);
+    printf("Copied string with strcpy is: %s \n", copiedString);
 
     return 0;
 }
@@ -37,14 +41,14 @@ void copyString(char *userInput, char *copy) {
     // char *strBeginning = copy; //starting address from string at copy
 
     while(*userInput != '\0') {
-        *copy = *userInput; //Copies value from address where *userInput points
-                            //to address where *copy is pointing to.
-                            //Note: they should both be pointing to same index of each respective array.
+        /*Copies value from address where *userInput points to address where *copy is pointing to.
+        Note: they should both be pointing to same index of each respective array.*/
+        *copy = *userInput; 
         userInput++; //Move to the next char of userInput char array
         copy++; //Move to the next char of the copy char array
     }
-    //now copy is pointing to the index right after the last char of the array
-    *copy = '\0';   //Adds the end of string char '\0'
-                    //to the end of the char array at the current index
-                    //which *copy is pointing to
+    /*Now copy is pointing to the index right after the last char of the array.
+    Adds the end of string char '\0' to the end of thse char array 
+    at the current index which *copy is pointing to. */
+    *copy = '\0';
 }
