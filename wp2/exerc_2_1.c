@@ -9,33 +9,23 @@
 void copyString(char *userInput2, char *copyStr2); //function prototype
 
 int main() {
-    char userInput[MAX]; //local string variable with user input
-    char anotherStr[MAX];
 
-    printf("\nCopying from myfile.txt");
-    FILE *f; //pointer that will point to an element of type FILE
-    f = fopen("myfile.txt", "r"); //f contains the file content;
-        
-    fgets (userInput, MAX, f);  //reads f, stores content in read_str
-                                // reads just one line
-    fclose(f); //closes input stream
+    char stringInput[MAX]; //local string variable with user input
+    char anotherStr[MAX]; // copy string for a)
+    char anotherStr2[MAX]; //copy string for b)
 
-    // printf("Please enter string to be copied:\n");
-    // fgets(userInput, MAX, stdin); //read user input, saves it in userInput local var
-    
-    // a) copying variable with lib function strcpy()
-    strcpy(anotherStr, userInput); //copies userInput to anotherStr
-    printf("\nThe first copied string is:\n %s", anotherStr);
+    printf("Please enter string to be copied:\n");
+    fgets (stringInput, MAX, stdin);  //reads f, stores content in read_str
 
-    //b) Your own function void copyString(...) not using any library function.
-    printf("Please enter second string to be copied:\n");
-    char userInput2[MAX]; //local string variable with user input
-    char anotherStr2[MAX]; //copy string
-    fgets(userInput2, MAX, stdin); //read user input, saves it in userInput2 local var
-    copyString(userInput2, anotherStr2);    //copies userInput2 into anotherStr2
-                                            //you don't have to pass pointers because you are passing arrays!
-                                            //if you were dealing with simple chars, you would have to pass a pointer.
-    printf("the value of anotherStr2 is\n%s\n", anotherStr2);
+    // a) Copying variable with lib function strcpy()
+    printf("\na) Copying variable with lib function strcpy().\n");
+    strcpy(anotherStr, stringInput); //copies userInput to anotherStr
+    printf("The value of the copy anotherStr is:\n%s", anotherStr);
+
+    // b) Your own function void copyString(...) not using any library function.
+    printf("\nb) Copying variable with our own function copyString() function.\n");
+    copyString(stringInput, anotherStr2);    //copies userInput into anotherStr2
+    printf("The value of the copy anotherStr2 is:\n%s\n", anotherStr2);
 
     return 0; //returns 0 if everything is run properly
 }
