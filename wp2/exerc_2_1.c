@@ -7,6 +7,7 @@ Aleksandar Isakovski
 Gustav Skallberg
 Thiago Oliva
 
+all group members were present at the demo.
 Demonstration code: 363840
 ======================================*/
 
