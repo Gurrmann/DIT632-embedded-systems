@@ -1,3 +1,4 @@
+#include <stdlib.h> //Without this lib, Srand() and rand() result in annoying warning.
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
@@ -5,8 +6,6 @@
 #include <time.h> //so that we can use srand
 
 #define MAX 20 //max number of chars in input
-#define RAND_MAX 99 //max number of chars in input
-
 
 int main() {
 
@@ -14,7 +13,7 @@ int main() {
     int lower = 1; //lower limit of the random int generation.
     int upper = 99; //upper limit of the random int generation.
     int randNumber; //variable containing the random int generated.
-    srand(time(0)); //reinitialize the seed for number generation in every execution of the code.
+    srand(time(NULL)); //reinitialize the seed for number generation in every execution of the code.
     for (int i = 0; i < MAX; i++) {
         randNumber = (rand() % (upper - lower + 1)) + lower;    //random number generated.
                                                                 //This formula for delimiting range in
@@ -28,6 +27,18 @@ int main() {
     printf("The size of an integer (number of bytes) is: %d \n", sizeof(intArray[0])); //size of int, as first index is an int.
     printf("The size of the whole array is: %d\n", sizeof(intArray)); //size of whole array.
 
+    printf("\nPrinting each element of an array as a double, through a pointer\n");
+    
+    int *ptr = intArray; //assigns pointer to first element of intArray
+    int counter = 0; //*ptr does not stop after 20 iterations, so it was necessary counter to ensure loop would stop at index 19.
+    while (*ptr != NULL && counter < MAX) { 
+        // printf("array index %d is: %d\n", counter, *ptr);
+        printf("%lf\n", (double) *ptr); //format specifier for double, and casts *ptr value to double.
+        counter++; //Keeps track of iterations count.
+        ptr++; //Move to next element of array
+    }
+    
+    
     return 0; //return 0 if program is executed with no issues.
 }
 
