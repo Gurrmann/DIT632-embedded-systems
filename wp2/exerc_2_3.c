@@ -38,7 +38,7 @@ int main() {
             }
         }
         // Prints out the result depending on if they are identical or not 
-        identical ? printf("The words are identical") : printf("the words are not identical");
+        identical ? printf("The words are identical\n\n") : printf("the words are not identical\n\n");
         
     
 

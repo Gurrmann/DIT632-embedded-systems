@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
     int lastDigit = breakDown(persnr, 9, 9);
 
     
-    if (month > 12) {
+  if (month > 12 || month < 1) {
     printf("Invalid month \n");
   }
   // print error if day incorrect
@@ -47,6 +47,8 @@ int main(int argc, char const *argv[])
     return 0;
 }
 void readPersnr(char *person) { 
+  int start = *person; //starting address of the array;
+  while (*)
 }
 
 //get a range from the char array persnr and return it as an int
