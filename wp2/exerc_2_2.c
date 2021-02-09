@@ -1,3 +1,15 @@
+/*====================================
+File name: exerc_2_2.c
+Date: 2020-02-09
+Group nr: 21
+Members that contributed to the solutions:
+Aleksandar Isakovski
+Gustav Skallberg
+Thiago Oliva
+
+Demonstration code: 363840
+======================================*/
+
 #include <stdlib.h> //Without this lib, Srand() and rand() result in annoying warning.
 #include <stdio.h>
 #include <stdbool.h>

@@ -1,3 +1,16 @@
+/*====================================
+File name: exerc_2_8.c
+Date: 2020-02-09
+Group nr: 21
+Members that contributed to the solutions:
+Aleksandar Isakovski
+Gustav Skallberg
+Thiago Oliva
+
+Demonstration code: 363840
+======================================*/
+
+
 /*
  *  File    : nim.c
  *  Program : Nim game
