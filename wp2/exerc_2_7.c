@@ -4,7 +4,7 @@
 #define MAX 10
 
 //prototypes
-int readPersnr(char *person);
+// int readPersnr(char *person);
 int controlDigit(char *persnr);
 int breakDown(char *persnr, int start, int end);
 
@@ -23,10 +23,18 @@ int main(int argc, char const *argv[])
     int number = breakDown(persnr, 6, 8);
     int lastDigit = breakDown(persnr, 9, 9);
 
+    
+    if (month > 12) {
+    printf("Invalid month \n");
+  }
+  // print error if day incorrect
+  if (day > 31 || day < 1) {
+    printf("Invalid day \n");
+  }
+
     return 0;
 }
 void readPersnr(char *person) { 
-    fgets(person, MAX, stdin);
 }
 
 //get a range from the char array persnr and return it as an int
