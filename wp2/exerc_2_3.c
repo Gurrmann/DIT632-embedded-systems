@@ -1,38 +1,34 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 //macro to calculate the length of an array
 #define ARRAYSIZE(x) (sizeof(x) / sizeof((x)[0]))
 
 int main() {
 
-    char test1[] = "hej";
-    char test2[] = "hej";
-
-    //Takes the length of the two arrays to see if they are the same
-    size_t arr1 = ARRAYSIZE(test1);
-    size_t arr2 = ARRAYSIZE(test2);
-    
-
-    if (arr1 != arr2) printf("not identical");
-
-    else {
-        // if they are the same length it compares each element to see if there is a match
-        // if there isn't it will break the loop and alert the user
-
+      
+  
+        //takes in the input and stores it in variables
+        char input1[20];
+        char input2[20]; 
+        scanf("%s", input1);
+        scanf("%s", input2);
+     
+        //bool to determine if they are true or not
         bool identical = true;
 
-        for (size_t i = 0; i < arr1; i++)
+        for (size_t i = 0; i < 20; i++)
         {
-            if(test1[i] != (test2[i])) {
-                identical = false;
+            if(input1[0] != (input2[0])) {
+                identical = false; // sets the boolean to false and breaks the loop if they are not identical
                 break;
             }
         }
         // Prints out the result depending on if they are identical or not 
         identical ? printf("The words are identical") : printf("the words are not identical");
         
-    }
+    
 
 
     return 0;
