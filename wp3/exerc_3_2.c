@@ -12,7 +12,7 @@ Demonstration code:
 ======================================*/
 
 #include <stdio.h>
-#define MAX 20
+#define MAX 10
 
 int search_number(int, int[], int);
 
@@ -31,6 +31,44 @@ int main() {
   int userInput;
   scanf("%d", &userInput);
   printf("\nthe index of the number is: %d\n\n\n", search_number(userInput, test, 10));
+
+// b) There are a lot of ways to sort an array. For example, bubble sort which not is the fastest, but it is
+// easy to understand and implement. Write a sorting routine that use the following algorithm to sort
+// an array of integers.
+// • Find the minimum value in the list.
+// • Swap the minimum with the first in list.
+// • Repeat this but exclude the previous minimum on top of the list and search only in the rest of the
+// list.
+
+//loop through the list.
+//for each element, start a new loop
+//find index of min
+//replace it with the first.
+  int minIndex;
+  int temp;
+  for (int i = 0; i < MAX; i++){
+  minIndex = i;
+    for (int j = i + 1; j < MAX; j++) {
+      if (test[minIndex] > test[j]) {
+        minIndex = j;
+      }
+    }
+    //swap
+    if (i == minIndex) {
+      //do nothing. element already in the right place.
+    } else {
+       temp = test[i];
+       test[i] = test[minIndex];
+       test[minIndex] = temp; 
+    }
+  }
+
+  printf("The sorted array is:\n");
+  for (int i = 0; i < MAX; i++) {
+    printf ("%d ", test[i]);
+  }
+
+  printf("\n\n");
 
 
   return 0;
