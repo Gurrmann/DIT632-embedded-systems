@@ -41,6 +41,7 @@ int main()
   printf("\n------------------------------------------------------------------\n");
   printf("\nReinitializing...\n");
   printf("\n------------------------------------------------------------------\n");
+
   printf("\nPlease inform starting position on the X AXIS\n");
   scanf("%d", &x); //get robot's starting position on the X axis
 
@@ -82,7 +83,7 @@ void executeInstructions(ROBOT *ptr, char instructions[]) {
 //set the robot with the informed x, y and direction.
 void initializeRobot(ROBOT *ptr, int x, int y, enum DIRECTION dir) {
   ptr->xpos = x; //set robot's xpos to x.
-  ptr->ypos = y; //same as (*ptr).ypos = y
+  ptr->ypos = y; //this is equivalent to (*ptr).ypos = y
   ptr->dir = dir; //set robot's dir (always north here).
 }
 

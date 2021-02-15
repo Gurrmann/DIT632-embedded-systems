@@ -15,68 +15,66 @@ Demonstration code:
 #define MAX 10
 
 int search_number(int, int[], int);
+void swap (int *current, int *min);
 
 int main() {
 
-// a) Write a function that given an integer n, an array of integers and the size of the array determines
-// if n is in the array. If so the function should return the index for the first position of the number (in
-// case of several) otherwise returns -1.
-// For testing the function, write a main program that tests the function with help of an array initiated
-// in the main program as below and with a function declaration:
+//Part A
+  int test[] = {1, 2, 34, 5, 67, 3, 23, 12, 13, 10}; //test array
+  int userInput; //number to be searched in test array
 
-
-  int test[] = {1, 2, 34, 5, 67, 3, 23, 12, 13, 10};
   printf("{1, 2, 34, 5, 67, 3, 23, 12, 13, 10}\n");
   printf("Select a number to be searched in the array:\n");
-  int userInput;
-  scanf("%d", &userInput);
+
+  scanf("%d", &userInput); //get number to be searched in the array
+
+  //get result from search_number and prints it
   printf("\nthe index of the number is: %d\n\n\n", search_number(userInput, test, 10));
 
-// b) There are a lot of ways to sort an array. For example, bubble sort which not is the fastest, but it is
-// easy to understand and implement. Write a sorting routine that use the following algorithm to sort
-// an array of integers.
-// • Find the minimum value in the list.
-// • Swap the minimum with the first in list.
-// • Repeat this but exclude the previous minimum on top of the list and search only in the rest of the
-// list.
+//Part B
 
-//loop through the list.
-//for each element, start a new loop
-//find index of min
-//replace it with the first.
-  int minIndex;
-  int temp;
+  /*Logic: 
+  1) loop through array
+  2) for each element, start a new for loop
+  3) iterate through whole array. Find and save minimum value in minIndex
+  4) Swap current element and the element at minIndex (minimum value) */
+  
+  int minIndex; //current index of minimum value found
   for (int i = 0; i < MAX; i++){
-  minIndex = i;
+  minIndex = i; //set minIndex to current element at every new iteration.
+    
     for (int j = i + 1; j < MAX; j++) {
-      if (test[minIndex] > test[j]) {
-        minIndex = j;
+      if (test[minIndex] > test[j]) { //compares current minIndex element with every other element.
+        minIndex = j; //assign new minimum in case a smaller number is found.
       }
     }
-    //swap
     if (i == minIndex) {
-      //do nothing. element already in the right place.
+      //Do nothing. Current element is already the smallest.
     } else {
-       temp = test[i];
-       test[i] = test[minIndex];
-       test[minIndex] = temp; 
+      swap(&test[i], &test[minIndex]); //passing addresses to be used by pointers
     }
   }
 
   printf("The sorted array is:\n");
   for (int i = 0; i < MAX; i++) {
-    printf ("%d ", test[i]);
+    printf ("%d ", test[i]); //print elements of array.
   }
-
+  
   printf("\n\n");
-
-
   return 0;
+}
+
+void swap (int *current, int *min) {
+  int temp; //variable to assist in the swap
+  temp = *current; //assign value of pointer to temp;
+  *current = *min; //change VALUE at current to value of *min
+  *min = temp; //change VALUE of *min to value of temp
 }
 
 int search_number( int number, int tab[], int size) {
   for (int i = 0; i < size; i++) {
-    if (tab[i] == number)
+    //if number you're looking for is found, return 1. Else, returns -1.
+    if (tab[i] == number) 
     {
       return i;
     }
