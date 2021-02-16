@@ -50,12 +50,12 @@ int main(int argc, char *argv[])
   
   REGTYPE *akt_post, *head=NULL; //akt_post is current node;
   
-  head = random_list();
+  head = random_list(); //generate node list and return the first node, to be assigned as head.
   akt_post=head;
   
-  while(akt_post != NULL){
+  while(akt_post != NULL){ //while it doesn't reach the end of the node list (NULL node)
     printf("\n Post nr %d : %d" , nr++, akt_post->number);
-    akt_post = akt_post->next;
+    akt_post = akt_post->next; //move to the next node in the node list
   }
 
 // // --- Free of allocated memory ---
@@ -101,19 +101,19 @@ REGTYPE* random_list(void){
       break;
     }
 
-    current = newNode;
-    current->number = (rand() % (upper - lower + 1)) + lower;
-    current->prev = prevPtr;
+    current = newNode; //assign pointer to newNode;
+    current->number = (rand() % (upper - lower + 1)) + lower; //assign random number between 0 and 100 to new node
+    current->prev = prevPtr; //assign previous node (prevPtr) to prev
     current->prev->next = current; //Set the previous node's next to the current node.
-    current->next = NULL; //empty for now.
+    current->next = NULL; //node does not have a next for now.
 
-    printf("\nNode %d Current is: %d", i, current->number);
-    printf("\nNode %d Prev is: %d", i, current->prev->number);
+    printf("\nNode %d Current is: %d", i, current->number); //for testing
+    printf("\nNode %d Prev is: %d", i, current->prev->number); //for testing, making sure that prev is right
 
     prevPtr = current; //saves current number to be assigned as prev in the next node
   }
 
-  return(head);
+  return(head); //return head of the node list.
 }
 
 //==========================================================
