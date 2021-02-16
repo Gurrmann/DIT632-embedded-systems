@@ -16,7 +16,7 @@ Demonstration code:
 
 enum DIRECTION {N,E,S,W}; //North, East, South, West
 
-typedef struct { //typedef so you don't have to type struc every time you create a new ROBOT
+typedef struct { //typedef so you don't have to type struc ROBOT every time you create a new ROBOT
   int xpos; //position on X axis
   int ypos; //position on Y axis
   enum DIRECTION dir; //direction N E S W equivalent to 0, 1, 2, 3
