@@ -72,24 +72,31 @@ REGTYPE* random_list(void){
   int lower = 0; //lower limit of the random int generation.
   int upper = 100; //upper limit of the random int generation.
 
-  head = &firstNode;
+  head = &firstNode; //ptr to keep track of the top of the nodeList.
+  
+  //set first node
   current = &firstNode;
-
   current->prev = NULL; //head does not have a prev.
   current->number = (rand() % (upper - lower + 1)) + lower;
-  
-  printf("\nHead is: %d", current->number);
-  prevPtr = current; //saves current number to be assigned as prev in the next node
+  current->next = NULL; //empty for now
 
-  for (int i = 0; i < MAX; i++) {
-    REGTYPE newNode;
+  printf("\nNode 1:");
+  printf("\nCurrent is: %d", current->number);
+  printf("\nPrev is: %d", current->prev);
+  printf("\nNext is: %d\n", current->prev);
+
+  prevPtr = current; //saves current number to be assigned as prev in the next node
+  
+  for (int i = 1; i <= MAX; i++) {
+    REGTYPE newNode; //trying to dynamically alocate memory here.
     current = &newNode;
     current->number = (rand() % (upper - lower + 1)) + lower;
     current->prev = prevPtr;
+    current->prev->next = current; //Set the previous node's next to the current node.
     current->next = NULL; //empty for now.
 
-    printf("\nCurrent is: %d", current->number);
-    printf("\nPrev was: %d", current->prev->number);
+    printf("\nNode %d Current is: %d", i, current->number);
+    printf("\nNode %d Prev is: %d", i, current->prev->number);
 
     prevPtr = current; //saves current number to be assigned as prev in the next node
   }
@@ -101,3 +108,33 @@ REGTYPE* random_list(void){
 // REGTYPE* add_first(REGTYPE* temp, int data){
 //   // Adds a record first i list and set the field tal to data
 // }
+
+
+
+
+
+  // REGTYPE node2;
+  // current = &node2;
+  // current->number = (rand() % (upper - lower + 1)) + lower;
+  // current->prev = prevPtr;
+  // current->next = NULL; //for now
+  // current->prev->next = current;
+
+  // printf("\nNode 2:\n");
+  // printf("\nCurrent is: %d", current->number);
+  // printf("\nPrev is: %d", current->prev->number);
+  // printf("\nNext is: %d\n", current->next);
+  
+  // prevPtr = current; //saves current number to be assigned as prev in the next node
+
+  // REGTYPE node3;
+  // current = &node3;
+  // current->number = (rand() % (upper - lower + 1)) + lower;
+  // current->prev = prevPtr;
+  // current->next = NULL; //for now
+  // current->prev->next = current;
+
+  // printf("\nNode 3:\n");
+  // printf("\nCurrent is: %d", current->number);
+  // printf("\nPrev is: %d", current->prev->number);
+  // printf("\nNext is: %d\n", current->next);
