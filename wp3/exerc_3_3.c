@@ -7,8 +7,14 @@ Aleksandar Isakovski
 Gustav Skallberg
 Thiago Oliva
 
-all group members were present at the demo.
-Demonstration code: 
+Group members present at the demo:
+Aleksandar Isakovski
+Thiago Oliva
+
+->Since the demo was done on a spontaneous manner without being schedule beforehand, 
+Gustav Skallberg could not join in time to participate on this Demo.
+
+Demonstration code: 2782
 ======================================*/
 
 /********************************************
@@ -42,22 +48,21 @@ int main(int argc, char *argv[])
   
   int nr = 0;
   
-  REGTYPE *akt_post, *head=NULL; //akt_post is actual node;
+  REGTYPE *akt_post, *head=NULL; //akt_post is current node;
   
   head = random_list();
   akt_post=head;
   
-  // while(akt_post != NULL){
-  //   printf("\n Post nr %d : %d" , nr++, akt_post->number);
-  //   akt_post = akt_post->next;
-  // }
-// .........
-// .........
+  while(akt_post != NULL){
+    printf("\n Post nr %d : %d" , nr++, akt_post->number);
+    akt_post = akt_post->next;
+  }
 
 // // --- Free of allocated memory ---
 //   while((akt_post=head) != NULL){
 //     head = akt_post->next;
-//     free(akt_post);
+    // free(akt_post);
+    // akt_post = NULL;
 //   }
 //------------------
   return 0;
@@ -80,16 +85,23 @@ REGTYPE* random_list(void){
   current->number = (rand() % (upper - lower + 1)) + lower;
   current->next = NULL; //empty for now
 
-  printf("\nNode 1:");
+  printf("\nNode 0:");
   printf("\nCurrent is: %d", current->number);
   printf("\nPrev is: %d", current->prev);
   printf("\nNext is: %d\n", current->prev);
 
   prevPtr = current; //saves current number to be assigned as prev in the next node
-  
+
   for (int i = 1; i <= MAX; i++) {
-    REGTYPE newNode; //trying to dynamically alocate memory here.
-    current = &newNode;
+
+    REGTYPE *newNode = (REGTYPE*)malloc(MAX*sizeof(REGTYPE)); //trying to dynamically allocate memory here.
+    if (!newNode) { //if it is null, fault at memory allocation.
+      printf("\nSomething terrible has happened.\n");
+      printf("The program could not allocate memory.");
+      break;
+    }
+
+    current = newNode;
     current->number = (rand() % (upper - lower + 1)) + lower;
     current->prev = prevPtr;
     current->prev->next = current; //Set the previous node's next to the current node.
@@ -113,28 +125,3 @@ REGTYPE* random_list(void){
 
 
 
-  // REGTYPE node2;
-  // current = &node2;
-  // current->number = (rand() % (upper - lower + 1)) + lower;
-  // current->prev = prevPtr;
-  // current->next = NULL; //for now
-  // current->prev->next = current;
-
-  // printf("\nNode 2:\n");
-  // printf("\nCurrent is: %d", current->number);
-  // printf("\nPrev is: %d", current->prev->number);
-  // printf("\nNext is: %d\n", current->next);
-  
-  // prevPtr = current; //saves current number to be assigned as prev in the next node
-
-  // REGTYPE node3;
-  // current = &node3;
-  // current->number = (rand() % (upper - lower + 1)) + lower;
-  // current->prev = prevPtr;
-  // current->next = NULL; //for now
-  // current->prev->next = current;
-
-  // printf("\nNode 3:\n");
-  // printf("\nCurrent is: %d", current->number);
-  // printf("\nPrev is: %d", current->prev->number);
-  // printf("\nNext is: %d\n", current->next);

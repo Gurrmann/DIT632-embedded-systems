@@ -7,8 +7,14 @@ Aleksandar Isakovski
 Gustav Skallberg
 Thiago Oliva
 
-all group members were present at the demo.
-Demonstration code: 
+Group members present at the demo:
+Aleksandar Isakovski
+Thiago Oliva
+
+->Since the demo was done on a spontaneous manner without being schedule beforehand, 
+Gustav Skallberg could not join in time to participate on this Demo.
+
+Demonstration code: 2782
 ======================================*/
 
 #include <stdio.h>
