@@ -25,7 +25,8 @@ void scan(){
             pinMode(rowPins[row], INPUT_PULLUP);
 
             // Because of INPUT_PULLUP, the pin will read LOW when the switch is pressed
-            if (digitalRead(rowPins[row]) == LOW)  {
+            if (digitalRead(rowPins[row]) == LOW)
+            {
                 Serial.print(keyMap[row][column]);
             }
         }
@@ -39,4 +40,5 @@ void setup() {
 
 void loop() {
     scan();
+    delay(50);
 }
