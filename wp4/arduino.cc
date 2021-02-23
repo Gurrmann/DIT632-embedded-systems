@@ -1,3 +1,22 @@
+/*====================================
+File name: exerc_3_1.c
+Date: 2020-02-16
+Group nr: 21
+Members that contributed to the solutions:
+Aleksandar Isakovski
+Gustav Skallberg
+Thiago Oliva
+
+Group members present at the demo:
+Aleksandar Isakovski
+Thiago Oliva
+
+->Since the demo was done on a spontaneous manner without being schedule beforehand,
+Gustav Skallberg could not join in time to participate on this Demo.
+
+Demonstration code: AB005
+======================================*/
+
 const byte numRows = 4; //number of rows on the keypad
 const byte numCols = 4; //number of columns on the keypad
 
